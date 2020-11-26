@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace tabuada_exercicio_fixação
 {
@@ -6,18 +7,15 @@ namespace tabuada_exercicio_fixação
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Deseja Saber a tabuada de qual numero?");
-            int resposta = int.Parse(Console.ReadLine());
-
-            int resultado;
-
-            for (int contador = 10; contador > 0; contador--)
+            for (int fator = 1; fator <= 10; fator++)
             {
-
-                resultado = resposta * contador;
-                Console.WriteLine($"{resposta} * {contador} = {resultado}");
-                System.Threading.Thread.Sleep(500);
+                for (int fator2 = 1; fator2 <=10; fator2++)
+                {
+                    Console.WriteLine($"{fator} * {fator2} = {fator * fator2}");
+                    Thread.Sleep(200);
+                }
             }
+            
         }
     }
 }
